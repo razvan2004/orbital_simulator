@@ -16,3 +16,13 @@ Areas to look into:
 -improve performance
 -introducting equatorial coordinates
 -creating a graphic interface
+-conversion to real World units
+
+
+
+version 1.0 is avaible on github
+
+
+version 1.1
+update to the physics part of the program
+about twice as accurate with the same time and memory complexity
