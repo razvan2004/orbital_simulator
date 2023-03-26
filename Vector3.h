@@ -1,3 +1,9 @@
+/**
+this header contains mainly mathematical functions
+Vector3 as a class has 3 coordinates
+mathematically, an object Vector3 with variables x,y,z is the vector from the origin of the system to the x,y,z point in space
+
+*/
 std::ofstream o("output.txt");
 class Vector3
 {
@@ -53,7 +59,13 @@ void displayVector(Vector3 v)
 }
 void saveVector(Vector3 v)
 {
+    o<<std::fixed<<std::setprecision(6);
     o<<v.x<<" "<<v.y<<" "<<v.z<<" ";
+}
+void saveWholeVector(Vector3 v)
+{
+    o<<std::fixed<<std::setprecision(0);
+    o<<floor(v.x)<<" "<<floor(v.y)<<" "<<floor(v.z)<<" ";
 }
 //rescales the components of a vector by a linear ammount
 Vector3 rescale(Vector3 v, float scale)
