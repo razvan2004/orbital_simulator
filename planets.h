@@ -33,8 +33,8 @@ void generatePlanets(std::vector<planet> &storage, int N,float rom, float rop, f
     {
         srand(time(NULL)+N);
         planetmass=(rand()%int(rom));
-        aux.assignValue(rand()%int(rop),rand()%int(rop),rand()%int(rop));
-        aux2.assignValue(rand()%int(rov),rand()%int(rov),rand()%int(rov));
+        aux.assignValue(rand()%int(rop)*pow(-1,rand()%2),rand()%int(rop)*pow(-1,rand()%2),rand()%int(rop)*pow(-1,rand()%2));
+        aux2.assignValue(rand()%int(rov)*pow(-1,rand()%2),rand()%int(rov)*pow(-1,rand()%2),rand()%int(rov)*pow(-1,rand()%2));
         auxbody.planetCreation(planetmass,aux,aux2);
         auxbody.ID=storage.size();
         storage.push_back(auxbody);
@@ -42,7 +42,7 @@ void generatePlanets(std::vector<planet> &storage, int N,float rom, float rop, f
 }
 void planet::outputPozition()
 {
-    o<<"("<<std::fixed<<pozition.x/1000<<" , "<<std::fixed<<pozition.y/1000<<")\n";
+    o<<std::fixed<<pozition.x/1000<<"\n"<<std::fixed<<pozition.y/1000<<"\n";
 }
 void planet::outputVelocity()
 {
@@ -84,7 +84,6 @@ void planet::updatePhysics(std::vector <planet> storage)
             addVectors(acceleration,rescale(auxvec,G*storage[j].mass/pow(lengthModulus(auxvec),3)));
         }
     addVectors(previousAcc,acceleration);
-    assignVector(previousAcc,rescale(previousAcc,.5));
     addVectors(pozition, rescale(velocity,step));
     addVectors(pozition, rescale(acceleration,step*step/2));
     addVectors(velocity, rescale(previousAcc,step));
