@@ -4,7 +4,7 @@ Vector3 as a class has 3 coordinates
 mathematically, an object Vector3 with variables x,y,z is the vector from the origin of the system to the x,y,z point in space
 
 */
-std::ofstream o("output.txt");
+std::ofstream out("output.txt");
 class Vector3
 {
 public:
@@ -57,15 +57,15 @@ void displayVector(Vector3 v)
 {
     std::cout<<v.x<<" "<<v.y<<" "<<v.z<<" \n";
 }
-void saveVector(Vector3 v)
+void saveVector(Vector3 v,std::ofstream &out)
 {
-    o<<std::fixed<<std::setprecision(6);
-    o<<v.x<<" "<<v.y<<" "<<v.z<<" ";
+    out<<std::fixed<<std::setprecision(6);
+    out<<v.x<<" "<<v.y<<" "<<v.z<<"\n";
 }
-void saveWholeVector(Vector3 v)
+void saveWholeVector(Vector3 v,std::ofstream &out)
 {
-    o<<std::fixed<<std::setprecision(0);
-    o<<floor(v.x)<<" "<<floor(v.y)<<" "<<floor(v.z)<<" ";
+    out<<std::fixed<<std::setprecision(0);
+    out<<floor(v.x)<<" "<<floor(v.y)<<" "<<floor(v.z)<<"\n";
 }
 //rescales the components of a vector by a linear ammount
 Vector3 rescale(Vector3 v, float scale)
