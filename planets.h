@@ -40,15 +40,6 @@ void generatePlanets(std::vector<planet> &storage, int N,float rom, float rop, f
         storage.push_back(auxbody);
     }
 }
-void planet::outputPozition()
-{
-    o<<std::fixed<<pozition.x/1000<<"\n"<<std::fixed<<pozition.y/1000<<"\n";
-}
-void planet::outputVelocity()
-{
-    o<<std::fixed<<velocity.x/1000<<" "<<std::fixed<<velocity.y/1000<<'\n';
-}
-
 void readPlanet(std::vector<planet> &storage)
 {
     float massaux;
@@ -87,6 +78,14 @@ void planet::updatePhysics(std::vector <planet> storage)
     addVectors(pozition, rescale(velocity,step));
     addVectors(pozition, rescale(acceleration,step*step/2));
     addVectors(velocity, rescale(previousAcc,step));
+}
+void planet::outputPozition()
+{
+    out<<std::fixed<<pozition.x/1000<<"\n"<<std::fixed<<pozition.y/1000<<"\n";
+}
+void planet::outputVelocity()
+{
+    out<<std::fixed<<velocity.x/1000<<" "<<std::fixed<<velocity.y/1000<<'\n';
 }
 float totalEnergy(std::vector<planet> storage)
 {
