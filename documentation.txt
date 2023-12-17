@@ -1,4 +1,4 @@
-This program was made by Agafitei Razvan for his professional qualification's exam
+This program was made by Agafitei Razvan.
 This is a simulator of planetary orbits
 The program gathers data provided by the user in Solar UNITS : masses in units of the Sun's mass , distances in units of the Astronomical Unit.
 One unit mass equals 10^20 kg, one unit distance equals 1000km, one unit time is approximately one sideral month.
