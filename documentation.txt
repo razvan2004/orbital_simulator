@@ -2,22 +2,18 @@ This program was made by Agafitei Razvan.
 This is a simulator of planetary orbits
 The program gathers data provided by the user in Solar UNITS : masses in units of the Sun's mass , distances in units of the Astronomical Unit.
 One unit mass equals 10^20 kg, one unit distance equals 1000km, one unit time is approximately one sideral month.
-The pozition vector(0,0,0) has no special properties.
+The position vector(0,0,0) has no special properties.
 The General Theory of Relativity or the Special Theory of Relativity were not implemented as of the date of writing the documentation.
 This version uses a O(n^2) algorithm
 
 
-The algorithm computes for each and every pair of bodies the force between them. It calculates each bodies's acceleration, velocity and position
+The algorithm computes for each and every pair of bodies the force between them. It calculates each body's acceleration, velocity and position
 
 
 Areas to look into:
-- create unit and zero vector for better readability
 - design and implement an algorithm that takes into account energy losses and compensates for them
 -improve performance
--introducting equatorial coordinates
--creating a graphic interface
--conversion to real World units
-
+-implement a NlogN algorithm
 
 
 version 1.0 is avaible on github
