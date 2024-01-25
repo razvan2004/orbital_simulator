@@ -90,8 +90,10 @@ void planet::outputVelocity()
 float totalEnergy(std::vector<planet> storage)
 {
     float energy=0;
+    //kinetic energy
     for(int i=0; i<storage.size(); i++)
         energy+=storage[i].mass*lengthModulus(storage[i].velocity)*lengthModulus(storage[i].velocity)/2;
+    //potential energy
     for(int i=0; i<storage.size(); i++)
         for(int j=i+1; j<storage.size(); j++)
         {
